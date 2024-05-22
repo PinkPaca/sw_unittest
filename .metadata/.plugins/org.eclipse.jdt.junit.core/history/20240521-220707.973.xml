@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookTest" project="Unit-test" tests="3" started="3" failures="3" errors="0" ignored="0">
+  <testsuite name="BookTest" time="0.016" uniqueid="[engine:junit-jupiter]/[class:BookTest]">
+    <testcase name="testAddBook" classname="BookTest" time="0.011" displayname="testAddBook()" uniqueid="[engine:junit-jupiter]/[class:BookTest]/[method:testAddBook()]">
+      <failure>
+        <expected>BookDetail@54c5a2ff</expected>
+        <actual>BookDetail@6d4d66d2</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;BookDetail@54c5a2ff&gt; but was: &lt;BookDetail@6d4d66d2&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at BookTest.addBookPrint(BookTest.java:21)
+	at BookTest.testAddBook(BookTest.java:57)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+    <testcase name="testSearchBook" classname="BookTest" time="0.002" displayname="testSearchBook()" uniqueid="[engine:junit-jupiter]/[class:BookTest]/[method:testSearchBook()]">
+      <failure>
+        <expected>BookDetail@48075da3</expected>
+        <actual>BookDetail@68c9133c</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;BookDetail@48075da3&gt; but was: &lt;BookDetail@68c9133c&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at BookTest.addBookPrint(BookTest.java:21)
+	at BookTest.testSearchBook(BookTest.java:64)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+    <testcase name="testRemoveBook" classname="BookTest" time="0.001" displayname="testRemoveBook()" uniqueid="[engine:junit-jupiter]/[class:BookTest]/[method:testRemoveBook()]">
+      <failure>
+        <expected>BookDetail@5e2c3d18</expected>
+        <actual>BookDetail@2cb4893b</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;BookDetail@5e2c3d18&gt; but was: &lt;BookDetail@2cb4893b&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at BookTest.addBookPrint(BookTest.java:21)
+	at BookTest.testRemoveBook(BookTest.java:75)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>

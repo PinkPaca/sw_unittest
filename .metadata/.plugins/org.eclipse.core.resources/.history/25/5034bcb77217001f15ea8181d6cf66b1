@@ -1,0 +1,51 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import Book.bookDetail;
+class BookTest {
+
+	private Book book;
+	
+	void printBook(String id, String title, String author, int issuedYear, String extraStr) {
+		System.out.println("Book{id: '"+id+"', 제목: '"+title+"', 저자: '"+author+"', 출판년도: "+issuedYear+extraStr);
+	}
+	
+	@BeforeAll
+	void setUpBeforeClass() {
+		book = new Book();
+	}
+
+
+	@Test
+	void testAddBook() {
+		book.addBook("1", "자바 기초", "Jane", 2021);
+		assertEquals(book.books.get(book.books.size()-1), new BookDetail("1", "자바 기초", "Jane", 2021));
+		printBook("1", "자바 기초", "Jane", 2021, "도서가 추가되었습니다.");
+
+		book.addBook("1", "자바 기초", "Jane", 2021);
+		book.searchBook("1");
+	}
+
+	@Test
+	void testSearchBook() {
+		book.addBook("1", "자바 기초", "Jane", 2021);
+		book.addBook("2", "소프트웨어 공학", "Tom", 2014);
+		book.addBook("3", "분산 컴퓨팅", "Yoon", 2024);
+		book.searchBook("1");
+		book.searchBook("2");
+		book.searchBook("3");
+		book.searchBook("4");
+	}
+
+	@Test
+	void testRemoveBook() {
+		book.addBook("1", "자바 기초", "Jane", 2021);
+		book.addBook("2", "소프트웨어 공학", "Tom", 2014);
+		book.removeBook("1");
+		book.removeBook("1");
+		book.searchBook("1");
+	}
+
+}

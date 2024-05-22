@@ -1,0 +1,82 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class BookTest {
+
+	private Book book;
+	
+	void printBook(String id, String title, String author, int issuedYear, String extraStr) {
+		System.out.println("Book{id: '"+id+"', 제목: '"+title+"', 저자: '"+author+"', 출판년도: "+issuedYear+extraStr);
+	}
+	
+	@BeforeEach
+	void setUp() {
+		book = new Book();
+	}
+	
+	void addBookPrint(String id, String title, String author, int issuedYear) {
+		book.addBook(id, title, author, issuedYear);
+		assertEquals(book.books.get(book.books.size()-1), new BookDetail(id, title, author, issuedYear));
+		printBook(id, title, author, issuedYear, "도서가 추가되었습니다.");
+	}
+	
+	void addBookException(String id, String title, String author, int issuedYear) {
+		assertThrows(IllegalArgumentException.class, () -> book.addBook(id, title, author, issuedYear), "Existed book");
+		System.out.println("해당 ID("+id+") 는 이미 존재합니다.");
+	}
+	
+	void searchBookPrint(String id) {
+		System.out.println("검색 결과");
+		BookDetail searchedBook = book.searchBook(id);
+		assertEquals(id, searchedBook.id);
+		printBook(searchedBook.id, searchedBook.title, searchedBook.author, searchedBook.issuedYear, "");
+	}
+	
+	void searchBookException(String id) {
+		assertThrows(IllegalArgumentException.class, () -> book.searchBook(id), "Non existed book");
+		System.out.println("검색된 도서가 없습니다.");
+	}
+	
+	void removeBookPrint(String id) {
+		BookDetail targetBook = book.searchBook(id);
+		book.removeBook(id);
+		assertFalse(book.books.contains(targetBook));
+		printBook(targetBook.id, targetBook.title, targetBook.author, targetBook.issuedYear, "도서가 추가되었습니다.");
+	}
+	
+	void removeBookException(String id) {
+		assertThrows(IllegalArgumentException.class, () -> book.searchBook(id), "Non existed book");
+		System.out.println("해당 ID("+id+")의 도서를 찾을 수 없습니다.");
+	}
+
+
+	@Test
+	void testAddBook() {
+		addBookPrint("1", "자바 기초", "Jane", 2021);
+		addBookException("1", "자바 기초", "Jane", 2021);
+		searchBookPrint("1");
+	}
+
+	@Test
+	void testSearchBook() {
+		addBookPrint("1", "자바 기초", "Jane", 2021);
+		addBookPrint("2", "소프트웨어 공학", "Tom", 2014);
+		addBookPrint("3", "분산 컴퓨팅", "Yoon", 2024);
+		searchBookPrint("1");
+		searchBookPrint("2");
+		searchBookPrint("3");
+		searchBookException("4");
+	}
+
+	@Test
+	void testRemoveBook() {
+		addBookPrint("1", "자바 기초", "Jane", 2021);
+		addBookPrint("2", "소프트웨어 공학", "Tom", 2014);
+		removeBookPrint("1");
+		removeBookException("1");
+		searchBookException("1");
+	}
+
+}

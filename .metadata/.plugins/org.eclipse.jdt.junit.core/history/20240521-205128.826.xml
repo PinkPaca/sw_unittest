@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JunitTest" project="Unit-test" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="JunitTest" time="0.0" uniqueid="[engine:junit-jupiter]/[class:JunitTest]">
+    <testcase name="testDivideByZero" classname="JunitTest" time="0.0" displayname="testDivideByZero()" uniqueid="[engine:junit-jupiter]/[class:JunitTest]/[method:testDivideByZero()]"/>
+    <testcase name="testAdd" classname="JunitTest" time="0.0" displayname="testAdd()" uniqueid="[engine:junit-jupiter]/[class:JunitTest]/[method:testAdd()]"/>
+    <testcase name="testSubtract" classname="JunitTest" time="0.0" displayname="testSubtract()" uniqueid="[engine:junit-jupiter]/[class:JunitTest]/[method:testSubtract()]"/>
+    <testcase name="testDivide" classname="JunitTest" time="0.0" displayname="testDivide()" uniqueid="[engine:junit-jupiter]/[class:JunitTest]/[method:testDivide()]"/>
+    <testcase name="testMultifly" classname="JunitTest" time="0.0" displayname="testMultifly()" uniqueid="[engine:junit-jupiter]/[class:JunitTest]/[method:testMultifly()]"/>
+  </testsuite>
+</testrun>
