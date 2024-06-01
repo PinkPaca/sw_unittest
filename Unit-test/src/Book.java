@@ -1,35 +1,19 @@
-import java.util.*;
-
 public class Book {
-	ArrayList<BookDetail> books = new ArrayList<BookDetail>();
+	public String id;
+	public String title;
+	public String author;
+	public int issuedYear;
 	
-	
-	public void addBook(String id, String title, String author, int issuedYear) {
-		for(BookDetail book:books) {
-			if(book.id==id) {
-				throw new IllegalArgumentException("Existed book");
-			}
-		}
-		books.add(new BookDetail(id, title, author, issuedYear));		
+	public Book(String newId, String newTitle, String newAuthor, int newIssuedYear) {
+		this.id=newId;
+		this.title=newTitle;
+		this.author=newAuthor;
+		this.issuedYear=newIssuedYear;
 	}
 	
-	public BookDetail searchBook(String id) {
-		for(BookDetail book:books) {
-			if(book.id==id) {
-				return book;
-			}
-		}
-		throw new IllegalArgumentException("Non existed book");
-	}
-	
-	public void removeBook(String id) {
-		for(BookDetail book:books) {
-			if(book.id==id) {
-				books.remove(book);
-				return;
-			}
-		}
-		throw new IllegalArgumentException("Non existed book");
 
+	public void printBook( String extraStr) {
+		System.out.println("Book{id: '"+id+"', 제목: '"+title+"', 저자: '"+author+"', 출판년도: "+issuedYear+"}"+extraStr);
+		
 	}
 }
