@@ -1,5 +1,9 @@
 pipeline {
 	agent any
+
+	environment {
+		classpath="/Users/leeahreum/eclipse/java-2024-03/Eclipse.app/Contents/Eclips/plugins/*:classes"
+	}
 	
 	stages {
 		stage('Checkout') {
@@ -13,14 +17,19 @@ pipeline {
 			steps {
 				// Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
 				// window  경우 bat
-				sh 'javac -encoding UTF-8 -d classes Unit-test/src/**/*.java'
+				sh 'echo $classpath'
+				sh """
+    					#!/bin/bash
+	 			javac -cp $classpath -encoding UTF-9 -d classes Unite-test/src/Book.java Unit-test/src/BookManager.java Unit-test/src/BookManagerTest.java
+     				"""
 			}
 		}
 
 		stage('Test') {
 			steps {
-				def classpath = "classes;lib/;path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
-				bat 'java -cp classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
+				sh """
+    					java -cp $classpath org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt
+	 			"""
 			}
 		}
 	}		
