@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	environment {
-		classpath="/Users/leeahreum/eclipse/java-2024-03/Eclipse.app/Contents/Eclips/plugins/*:classes"
+		classpath="/Applications/Eclipse.app/Contents/Eclipse/plugins/*:classes"
 	}
 	
 	stages {
