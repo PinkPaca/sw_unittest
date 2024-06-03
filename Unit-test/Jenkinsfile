@@ -20,7 +20,7 @@ pipeline {
 				sh 'echo $classpath'
 				sh """
     					#!/bin/bash
-	 			javac -cp $classpath -encoding UTF-9 -d classes Unit-test/src/Book.java Unit-test/src/BookManager.java Unit-test/src/BookManagerTest.java
+	 			javac -cp $classpath -encoding UTF-8 -d classes Unit-test/src/Book.java Unit-test/src/BookManager.java Unit-test/src/BookManagerTest.java
      				"""
 			}
 		}
