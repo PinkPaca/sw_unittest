@@ -14,7 +14,7 @@ class BookManagerTest {
 
 	@Test
 	void addBook() {
-		Book book = new Book("1", "자바 기초", "Jane", 2021);
+		Book book = new Book(1, "자바 기초", "Jane", 2021);
 
 		bookManager.addBook(book);
 
@@ -24,7 +24,7 @@ class BookManagerTest {
 
 	@Test
 	void addExistBook() {
-		Book book1 = new Book("1", "자바 기초", "Jane", 2021);
+		Book book1 = new Book(1, "자바 기초", "Jane", 2021);
 
 		bookManager.addBook(book1);
 
@@ -34,11 +34,11 @@ class BookManagerTest {
 
 	@Test
 	void searchBook() {
-		Book book1 = new Book("1", "자바 기초", "Jane", 2021);
+		Book book1 = new Book(1, "자바 기초", "Jane", 2021);
 
 		bookManager.addBook(book1);
 
-		String targetId = "1";
+		int targetId = 1;
 		Book targetBook = bookManager.searchBook(targetId);
 
 		assertEquals(book1.id, targetBook.id);
@@ -46,15 +46,15 @@ class BookManagerTest {
 
 	@Test
 	void searchUnexistBook() {
-		String targetId = "1";
+		int targetId = 1;
 
 		assertThrows(IllegalArgumentException.class, () -> bookManager.searchBook(targetId));
 	}
 
 	@Test
 	void removeBook() {
-		Book book1 = new Book("1", "자바 기초", "Jane", 2021);
-		String targetId = "1";
+		Book book1 = new Book(1, "자바 기초", "Jane", 2021);
+		int targetId = 1;
 
 		bookManager.addBook(book1);
 

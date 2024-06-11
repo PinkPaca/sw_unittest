@@ -1,10 +1,10 @@
 public class Book {
-	public String id;
+	public int id;
 	public String title;
 	public String author;
 	public int issuedYear;
 	
-	public Book(String newId, String newTitle, String newAuthor, int newIssuedYear) {
+	public Book(int newId, String newTitle, String newAuthor, int newIssuedYear) {
 		this.id=newId;
 		this.title=newTitle;
 		this.author=newAuthor;
