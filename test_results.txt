@@ -1,0 +1,37 @@
+Book{id: '1', 제목: '자바 기초', 저자: 'Jane', 출판년도: 2021}도서가 추가되었습니다.
+해당 ID(1)는 이미 존재합니다.
+Book{id: '1', 제목: '자바 기초', 저자: 'Jane', 출판년도: 2021}도서가 추가되었습니다.
+Book{id: '1', 제목: '자바 기초', 저자: 'Jane', 출판년도: 2021}도서가 추가되었습니다.
+Book{id: '1', 제목: '자바 기초', 저자: 'Jane', 출판년도: 2021}
+Book{id: '1', 제목: '자바 기초', 저자: 'Jane', 출판년도: 2021}도서가 추가되었습니다.
+Book{id: '1', 제목: '자바 기초', 저자: 'Jane', 출판년도: 2021}도서를 삭제하였습니다.
+검색된 도서가 없습니다.
+검색된 도서가 없습니다.
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mBookManagerTest[0m [32m✔[0m
+[36m│     ├─[0m [34maddExistBook()[0m [32m✔[0m
+[36m│     ├─[0m [34maddBook()[0m [32m✔[0m
+[36m│     ├─[0m [34msearchBook()[0m [32m✔[0m
+[36m│     ├─[0m [34mremoveBook()[0m [32m✔[0m
+[36m│     └─[0m [34msearchUnexistBook()[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 37 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+
