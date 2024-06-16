@@ -1,14 +1,22 @@
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.List;
  
 public class BookManager {
 	
-	public ArrayList<Book> books = new ArrayList<Book>();
+	public ArrayList<Book> books;
+	
+	BookManager() {
+		this.books = new ArrayList<Book>();
+	}
+	
+	BookManager(List<Book> books) {
+		this.books = new ArrayList<Book>(books);
+	}
 	
 	
 	public void addBook(Book book) {
 		for(Book existBook:books) {
-			if(existBook.id==book.id) {
+			if(existBook.id == book.id) {
 				System.out.println("해당 ID(" +book.id +")는 이미 존재합니다.");
 				throw new IllegalArgumentException("Existed book");
 			}
@@ -20,7 +28,7 @@ public class BookManager {
 	
 	public Book searchBook(int id) {
 		for(Book book:books) {
-			if(book.id==id) {
+			if(book.id == id) {
 				book.printBook("");
 
 				return book;
@@ -32,18 +40,23 @@ public class BookManager {
 	
 	public void removeBook(int id) {
 		for(Book book:books) {
-			if(book.id==id) {
+			if(book.id == id) {
 				book.printBook("도서를 삭제하였습니다.");
 
 				books.remove(book);
 				return;
 			}
 		}
+		
 		throw new IllegalArgumentException("Non existed book");
 	}
 	
-	// 책 id로 이진 탐색하는 함수 
-	public Book search_bs(int id, int low, int high) {		
+	public Book search_bs(int id) {
+		return binarySearchBook(id, 0, books.size());
+	}
+	
+	// 책 id로 이진 탐색하는 재귀 함수 
+	private Book binarySearchBook(int id, int low, int high) {		
 		int mid;
 		
 		while(low <= high) {

@@ -12,8 +12,8 @@ public class Book {
 	}
 	
 
-	public void printBook( String extraStr) {
-		System.out.println("Book{id: '"+id+"', 제목: '"+title+"', 저자: '"+author+"', 출판년도: "+issuedYear+"}"+extraStr);
+	public void printBook(String extraStr) {
+		System.out.println("Book{id: '"+id+"', 제목: '"+title+"', 저자: '"+author+"', 출판년도: "+issuedYear+"}" + extraStr);
 		
 	}
 }
