@@ -25,8 +25,6 @@ class BookManagerTest {
 						new Book(10, "Rust 심화", "Jin", 2021)
 				)
 		);
-		
-		
 	}
 
 	@Test
